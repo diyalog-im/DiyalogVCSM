@@ -1,6 +1,0 @@
-use_frameworks!
-target 'DiyalogVCSM_Tests' do
-  pod 'DiyalogVCSM', :path => '../'
-  
-  
-end
