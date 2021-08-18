@@ -1,10 +1,5 @@
 # DiyalogVCSM
 
-[![CI Status](https://img.shields.io/travis/djderasari@weblineindia.com/DiyalogVCSM.svg?style=flat)](https://travis-ci.org/djderasari@weblineindia.com/DiyalogVCSM)
-[![Version](https://img.shields.io/cocoapods/v/DiyalogVCSM.svg?style=flat)](https://cocoapods.org/pods/DiyalogVCSM)
-[![License](https://img.shields.io/cocoapods/l/DiyalogVCSM.svg?style=flat)](https://cocoapods.org/pods/DiyalogVCSM)
-[![Platform](https://img.shields.io/cocoapods/p/DiyalogVCSM.svg?style=flat)](https://cocoapods.org/pods/DiyalogVCSM)
-
 ## Installation
 
 Simply add the following line to your Podfile by updating \<version no> to the desired version.
