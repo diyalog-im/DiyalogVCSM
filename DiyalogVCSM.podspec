@@ -8,35 +8,36 @@
 
 Pod::Spec.new do |s|
   s.name             = 'DiyalogVCSM'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of DiyalogVCSM.'
+  s.version          = '1.0.0'
+  s.summary          = 'DiyalogVCSM iOS SDK for Video Call Support Integration for you app.'
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
-
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
-
-  s.homepage         = 'https://github.com/tcak76/DiyalogVCSM'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
+  s.homepage         = 'https://github.com/diyalog-im/DiyalogVCSM'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'tcak76' => 'tolga.cakiroglu@diyalog.im' }
-  s.source           = { :git => 'https://github.com/tcak76/DiyalogVCSM.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.author           = { 'Diyalog' => 'diyalog-im@users.noreply.github.com' }
+  s.source           = { :git => 'https://github.com/diyalog-im/DiyalogVCSM.git', :tag => s.version.to_s }
+  s.public_header_files = "DiyalogVCSM/DiyalogVCSM.framework/Headers/*.h"
+  s.source_files     = "DiyalogVCSM/DiyalogVCSM.framework/Headers/*.h"
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '10.0'
 
-  s.source_files = 'DiyalogVCSM/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'DiyalogVCSM' => ['DiyalogVCSM/Assets/*.png']
-  # }
+  s.prepare_command = <<-CMD
+    echo 'fetching DiyalogVCSM.framework'
+    curl -OL 'https://diyalog.im/app/pkgs/ios_frameworks/DiyalogVCSM/1.0.0/DiyalogVCSM.zip'
+    rm -fr 'DiyalogVCSM.framework'
+    echo 'unzipping DiyalogVCSM.framework'
+    unzip -o -q DiyalogVCSM.zip
+    echo 'cleaning files'
+    rm DiyalogVCSM.zip
+  CMD
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+  s.preserve_paths = 'DiyalogVCSM'
+  s.vendored_frameworks =  'DiyalogVCSM.framework'
+
+  s.xcconfig = {
+  "SWIFT_INCLUDE_PATHS" => "${PODS_ROOT}/DiyalogVCSM",
+  "FRAMEWORK_SEARCH_PATHS" => "${PODS_ROOT}/DiyalogVCSM",
+  "HEADER_SEARCH_PATHS" => "${PODS_ROOT}/DiyalogVCSM"
+
+  }
+
 end
