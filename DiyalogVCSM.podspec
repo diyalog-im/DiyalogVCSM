@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
 
   s.prepare_command = <<-CMD
     echo 'fetching DiyalogVCSM.framework'
-    curl -OL 'https://diyalog.im/app/pkgs/ios_frameworks/DiyalogVCSM/1.0.0/DiyalogVCSM.zip'
+    curl -OL 'https://diyalog.im/releases/DiyalogVCSM/1.0.0/DiyalogVCSM.zip'
     rm -fr 'DiyalogVCSM.framework'
     echo 'unzipping DiyalogVCSM.framework'
     unzip -o -q DiyalogVCSM.zip
